@@ -63,6 +63,8 @@ filterOption.addEventListener("click", filterTodo);
 
 // check content on our web-pages has loaded
 window.addEventListener("DOMContentLoaded", getTodos);
+
+
 // Functions
 
 function createElement(el, text = "", attrArr = []) {
@@ -109,6 +111,7 @@ function addTodo(event) {
   trashBtn.classList.add("trash-btn");
 
   todoDiv.appendChild(trashBtn);
+
 
   // append to list
 
@@ -228,7 +231,7 @@ function removeLocalTodos(todo) {
   // we filter and set back to local storage
   const todoIndex = todo.children[0].innerText;
   // use splice and give index and how many item to delete.
-  
+
   todos.splice(todos.indexOf(todoIndex), 1);
 
   localStorage.setItem("todos", JSON.stringify(todos));
